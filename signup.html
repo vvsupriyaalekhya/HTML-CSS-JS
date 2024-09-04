@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      color: #07051b;
+      background: url('pic.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fcfdff;
+      color: rgb(55, 77, 175);
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo img {
+      height: 50px;
+    }
+
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    header nav ul li {
+      display: inline;
+    }
+
+    header nav ul li a {
+      color: rgb(32, 67, 172);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .auth-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 70px;
+    }
+
+    .auth-box {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .required:after {
+      content: ' *';
+      color: red;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: white;
+    }
+
+    .iti {
+      width: 100%;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .password-container input[type="password"] {
+      padding-right: 40px;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    .auth-message {
+      color: red;
+      margin-top: 10px;
+    }
+
+    .options {
+      margin-top: 20px;
+    }
+
+    .options a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .options a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1px;
+      background-color: #c7dced;
+      color: rgb(27, 51, 128);
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo3.jpg" alt="ITJobMatrix Logo"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="about.html" class="protected-link">About</a></li>
+        <li><a href="maps.html" class="protected-link">Interactive Map</a></li>
+        <li><a href="Job_openings.html" class="protected-link">Job Openings</a></li>
+        <li><a href="Career_pathway.html" class="protected-link">Career Pathway</a></li>
+        <li><a href="contact.html" class="protected-link">Contact Us</a></li>
+        <li><a href="profile.html" class="protected-link">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="auth-container">
+    <div class="auth-box">
+      <h1>Sign Up</h1>
+      <form id="signup-form">
+        <label for="username" class="required">Username</label>
+        <input type="text" id="username" required>
+        <label for="phone" class="required">Phone</label>
+        <input type="tel" id="phone" required>
+        <label for="email" class="required">Email</label>
+        <input type="email" id="email" required>
+        <label for="department" class="required">Department</label>
+        <select id="department" required>
+          <option value="" disabled selected>Select your department</option>
+          <option value="cse">Computer Science and Engineering (CSE)</option>
+          <option value="cse-aiml">CSE Artificial Intelligence & Machine Learning (CSE AIML)</option>
+          <option value="csd">CSE Computer Science & Design (CSE CSD)</option>
+          <option value="cse-iot">CSE Internet of Things (CSE IOT)</option>
+          <option value="it">Information Technology (IT)</option>
+          <option value="eee">Electrical and Electronics Engineering (EEE)</option>
+          <option value="ece">Electronics and Communication Engineering (ECE)</option>
+          <option value="mech">Mechanical Engineering (ME)</option>
+          <option value="civil">Civil Engineering (CE)</option>
+          <option value="aero">Aeronautical Engineering (AE)</option>
+          <option value="chem">Chemical Engineering (ChE)</option>
+          <option value="biotech">Biotechnology (BT)</option>
+          <option value="met">Metallurgical Engineering (MetE)</option>
+          <option value="prod">Production Engineering (PE)</option>
+        </select>
+        <label for="password" class="required">Password</label>
+        <div class="password-container">
+          <input type="password" id="password" required>
+          <i class="fas fa-eye toggle-password" onclick="togglePassword('password')"></i>
+        </div>
+        <label for="confirm-password" class="required">Confirm Password</label>
+        <div class="password-container">
+          <input type="password" id="confirm-password" required>
+          <i class="fas fa-eye toggle-password" onclick="togglePassword('confirm-password')"></i>
+        </div>
+        <button type="submit">Sign Up</button>
+        <p id="signup-message" class="auth-message"></p>
+        <div class="options">
+          <p>Already a user? <a href="login.html">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 ITJobMatrix. All rights reserved.</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script>
+    // Initialize intl-tel-input
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      initialCountry: "auto",
+      geoIpLookup: function(success, failure) {
+        fetch('https://ipinfo.io/json', { headers: { 'Accept': 'application/json' }})
+          .then(response => response.json())
+          .then((response) => {
+            const countryCode = response && response.country ? response.country : "us";
+            success(countryCode);
+          })
+          .catch(() => {
+            failure();
+          });
+      },
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+
+    // document.getElementById('signup-form').addEventListener('submit', function(event) {
+    //   event.preventDefault(); // Prevent the form from submitting
+
+    //   const username = document.getElementById('username').value;
+    //   const phone = phoneInput.getNumber();
+    //   const email = document.getElementById('email').value;
+    //   const department = document.getElementById('department').value;
+    //   const password = document.getElementById('password').value;
+    //   const confirmPassword = document.getElementById('confirm-password').value;
+    //   const signupMessage = document.getElementById('signup-message');
+
+    //   // Clear previous messages
+    //   signupMessage.textContent = '';
+
+    //   // Validate email format
+    //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //   if (!emailRegex.test(email)) {
+    //     signupMessage.textContent = 'Please enter a valid email address.';
+    //     return;
+    //   }
+
+    //   // Validate phone number
+    //   if (!phoneInput.isValidNumber()) {
+    //     signupMessage.textContent = 'Please enter a valid phone number.';
+    //     return;
+    //   }
+
+    //   // Validate password conditions (example: at least 8 characters, 1 uppercase, 1 lowercase, 1 digit)
+    //   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    //   if (!passwordRegex.test(password)) {
+    //     signupMessage.textContent = 'Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number.';
+    //     return;
+    //   }
+
+    //   // Validate confirm password
+    //   if (password !== confirmPassword) {
+    //     signupMessage.textContent = 'Passwords do not match.';
+    //     return;
+    //   }
+
+    //   // If all validations pass, submit the form or perform the signup logic
+    //   signupMessage.textContent = 'Sign up successful! redirectingto login....';
+    //   // Perform signup logic here (e.g., send data to the server)
+    // });
+
+    // function togglePassword(id) {
+    //   const passwordField = document.getElementById(id);
+    //   const eyeIcon = passwordField.nextElementSibling;
+    //   if (passwordField.type === 'password') {
+    //     passwordField.type = 'text';
+    //     eyeIcon.classList.remove('fa-eye');
+    //     eyeIcon.classList.add('fa-eye-slash');
+    //   } else {
+    //     passwordField.type = 'password';
+    //     eyeIcon.classList.remove('fa-eye-slash');
+    //     eyeIcon.classList.add('fa-eye');
+    //   }
+    // }
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the form from submitting
+
+  const username = document.getElementById('username').value;
+  const phone = phoneInput.getNumber();
+  const email = document.getElementById('email').value;
+  const department = document.getElementById('department').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+  const signupMessage = document.getElementById('signup-message');
+
+  // Clear previous messages
+  signupMessage.textContent = '';
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    signupMessage.textContent = 'Please enter a valid email address.';
+    return;
+  }
+
+  // Validate phone number
+  if (!phoneInput.isValidNumber()) {
+    signupMessage.textContent = 'Please enter a valid phone number.';
+    return;
+  }
+
+  // Validate password conditions (example: at least 8 characters, 1 uppercase, 1 lowercase, 1 digit)
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  if (!passwordRegex.test(password)) {
+    signupMessage.textContent = 'Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number.';
+    return;
+  }
+
+  // Validate confirm password
+  if (password !== confirmPassword) {
+    signupMessage.textContent = 'Passwords do not match.';
+    return;
+  }
+
+  // If all validations pass, show success message and redirect
+  signupMessage.textContent = 'Sign up successful! Redirecting to login...';
+  
+  // Redirect after a short delay
+  setTimeout(function() {
+    window.location.href = 'login.html';
+  }, 2000); // Redirect after 2 seconds
+});
+
+  </script>
+
+</body>
+</html>

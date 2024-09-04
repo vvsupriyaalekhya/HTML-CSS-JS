@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <header>
+    <div class="logo">
+      <img src="logo3.jpg" alt="ITJobMatrix Logo" style="height: 50px;">
+    </div>
+  </header>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Password</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-box">
+      <h1>Reset Password</h1>
+      <form id="reset-password-form">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required>
+        <label for="new-password">New Password</label>
+        <input type="password" id="new-password" required>
+        <label for="confirm-password">Confirm New Password</label>
+        <input type="password" id="confirm-password" required>
+        <button type="submit">Reset Password</button>
+        <p id="reset-message" class="auth-message"></p>
+        <div class="options">
+          <p><a href="login.html">Back to Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 ITJobMatrix. All rights reserved.</p>
+  </footer>
+  
+  <!-- Inline JavaScript to handle form submission and redirection -->
+  <script>
+    document.getElementById('reset-password-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from submitting the default way
+
+      // Simulate successful password reset (you can replace this with an actual AJAX call)
+      setTimeout(function() {
+        // Display a success message
+        document.getElementById('reset-message').textContent = "Password reset successful! Redirecting to login page...";
+        document.getElementById('reset-message').style.color = "green";
+
+        // Redirect to the login page after 3 seconds
+        setTimeout(function() {
+          window.location.href = "login.html";
+        }, 3000); // 3000 milliseconds = 3 seconds
+      }, 1000); // Simulate a delay of 1 second for the operation
+    });
+  </script>
+</body>
+</html>

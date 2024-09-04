@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo3.jpg" alt="ITJobMatrix Logo" style="height: 50px;"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="about.html" class="protected-link">About</a></li>
+        <li><a href="maps.html" class="protected-link">Interactive Map</a></li>
+        <li><a href="Job_openings.html" class="protected-link">Job Openings</a></li>
+        <li><a href="Career_pathway.html" class="protected-link">Career Pathway</a></li>
+        <li><a href="contact.html" class="protected-link">Contact Us</a></li>
+        <li><a href="profile.html" class="protected-link">Profile</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-box">
+      <h1>Login</h1>
+      <form id="login-form">
+        <label for="username">Username</label>
+        <input type="text" id="username" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+        <button type="submit">Login</button>
+        <p id="login-message" class="auth-message"></p>
+        <div class="options">
+          <p><a href="forgotpassword.html" id="forgot-password-link">Forgot password?</a></p>
+          <p>New user? <a href="signup.html">Sign up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 ITJobMatrix. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

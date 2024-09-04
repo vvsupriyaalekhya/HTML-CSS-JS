@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Openings in USA</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      color: #333; /* Default text color */
+      background: url('img.png') no-repeat center center fixed; /* Set the background image */
+      background-size: cover; /* Cover the entire page */
+      padding-bottom: 10px; /* Add padding to prevent footer overlap */
+    }
+
+    a {
+      text-decoration: none;
+      color: #1e90ff; /* Lighter blue for contrast */
+    }
+
+    /* Header Styles */
+    header {
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      margin-right: 2em; /* Adjust this value to increase the space */
+    }
+
+    .logo a {
+      font-size: 1.5em; /* 24px assuming the default font size is 16px */
+      font-weight: bold;
+      color: #007bff; /* Bright blue for logo */
+    }
+
+    nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin-right: 1.25em; /* 20px */
+    }
+
+    nav a {
+      color: #495057; /* Dark grey for navigation links */
+    }
+
+    .content-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2em;
+      background-color: rgba(231, 244, 245, 0.8); /* Background color for the box */
+      border: 1px solid #dee2e6; /* Border color */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    .tableauPlaceholder {
+      width: 100%;
+      height: 75vh; /* Adjust height as needed */
+      margin: 0 auto;
+    }
+
+    footer {
+      padding: 1em 1em;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      color: #495057;
+    }
+
+
+    .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    .logo-img {
+      width: 50px; /* Adjust as needed */
+      height: auto;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Logo_2.png" alt="itjobmatrix Logo" class="logo-img">
+        itjobmatrix
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="maps.html">Interactive Map</a></li>
+        <li><a href="Job_openings.html">Job Openings</a></li>
+        <li><a href="Career_pathway.html">Career Pathway</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" id="location-input" placeholder="Search jobs...">
+      <button id="search-btn">Search</button>
+    </div>
+  </header>
+
+  <div class="content-container">
+    <h1>Job Openings in USA</h1>
+    <div class='tableauPlaceholder' id='viz1721817367691' style='position: relative'>
+      <noscript><a href='#'><img alt='Job Openings in USA ' src='https://public.tableau.com/static/images/us/usa_map1/Sheet1/1_rss.png' style='border: none' /></a></noscript>
+      <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='usa_map1/Sheet1' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/us/usa_map1/Sheet1/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+        <param name='filter' value='publish=yes' />
+      </object>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 itjobmatrix.com. All rights reserved.</p>
+  </footer>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1721817367691');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width='100%';
+    vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+</body>
+</html>

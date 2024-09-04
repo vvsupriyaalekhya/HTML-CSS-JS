@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - ITJobMatrix</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ensures that all profile info items have the same size */
+    .profile-box {
+      max-width: 600px; /* Adjust the maximum width as needed */
+      margin: 0 auto;
+      padding: 4em;
+      background-color: #f8f9fa; /* Light background for contrast */
+      border: 1px solid #dee2e6; /* Border for definition */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: row; /* Arrange label and value side by side */
+      justify-content: space-between;
+    }
+
+    .info-labels, .info-values {
+      display: flex;
+      flex-direction: column;
+      width: 45%; /* Adjust width to fit button */
+    }
+
+    .info-item {
+      margin-bottom: 0.5em; /* Space between items */
+      font-size: 16px; /* Font size for readability */
+    }
+
+    button {
+      display: block;
+      width: calc(100% - 2em); /* Full width minus padding */
+      padding: 10px;
+      margin-top: 1em;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-left: auto; /* Center the button */
+      margin-right: auto;
+      text-align: center;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo3.jpg" alt="ITJobMatrix Logo"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="about.html" class="protected-link">About</a></li>
+        <li><a href="maps.html" class="protected-link">Interactive Map</a></li>
+        <li><a href="Job_openings.html" class="protected-link">Job Openings</a></li>
+        <li><a href="Career_pathway.html" class="protected-link">Career Pathway</a></li>
+        <li><a href="contact.html" class="protected-link">Contact Us</a></li>
+        <li><a href="profile.html" class="protected-link">Profile</a></li>
+      </ul>
+    </nav>
+    <div id="auth-section" class="auth-section">
+      <!-- Login/Signup or Search/Profile will be injected here by JavaScript -->
+    </div>
+  </header>
+
+  <main>
+    <div class="profile-container">
+      <div class="profile-box">
+        <h1>Profile</h1>
+        <div id="profile-info" class="profile-info">
+          <div class="info-labels">
+            <div class="info-item"><strong>Username:</strong></div>
+            <div class="info-item"><strong>Email:</strong></div>
+            <div class="info-item"><strong>Phone:</strong></div>
+            <div class="info-item"><strong>Department:</strong></div>
+          </div>
+          <div class="info-values">
+            <div class="info-item" id="profile-username"></div>
+            <div class="info-item" id="profile-email"></div>
+            <div class="info-item" id="profile-phone"></div>
+            <div class="info-item" id="profile-department"></div>
+          </div>
+        </div>
+        <button id="logout-button">Logout</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 ITJobMatrix. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Display user profile information
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      const profileUsername = document.getElementById('profile-username');
+      const profileEmail = document.getElementById('profile-email');
+      const profilePhone = document.getElementById('profile-phone');
+      const profileDepartment = document.getElementById('profile-department');
+      const logoutButton = document.getElementById('logout-button');
+
+      if (currentUser) {
+        profileUsername.textContent = currentUser.username;
+        profileEmail.textContent = currentUser.email;
+        profilePhone.textContent = currentUser.phone;
+        profileDepartment.textContent = currentUser.department;
+      } else {
+        // Redirect to index.html if no user is logged in
+        window.location.href = 'index.html';
+      }
+
+      // Handle logout
+      logoutButton.addEventListener('click', () => {
+        localStorage.removeItem('currentUser');
+        alert('Logged out successfully!');
+        window.location.href = 'index.html'; // Redirect to the index page
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .logo {
+      margin-right: 2em; /* Adjust this value to increase the space */
+    }
+
+    .logo a {
+      font-size: 1.2em; /* Reduced from 1.5em */
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin-right: 1em; /* Reduced from 1.25em */
+    }
+
+    nav a {
+      color: #495057;
+      font-size: 14px; /* Reduced font size */
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input {
+      padding: 0.5em 0.75em; /* 8px 12px */
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 14px; /* Reduced font size */
+    }
+
+    .search-bar button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 0.5em 1em; /* 8px 16px */
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 0.5em; /* 8px */
+      font-size: 14px; /* Reduced font size */
+    }
+
+    .resource-links a {
+      display: block;
+      margin-bottom: 8px; /* Reduced from 10px */
+      font-size: 14px; /* Reduced font size */
+    }
+
+    /* Dashboard section styling */
+    .dashboard-features {
+      margin-top: 20px;
+    }
+
+    .dashboard-features div {
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      font-size: 14px; /* Reduced font size */
+    }
+
+    table, th, td {
+      border: 1px solid #dee2e6;
+    }
+
+    th {
+      background-color: #3f7cbe;
+      color: #fff;
+      padding: 8px; /* Reduced from 10px */
+      text-align: left;
+    }
+
+    td {
+      background-color: #f8f9fa;
+      padding: 8px; /* Reduced from 10px */
+      text-align: left;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #e9ecef;
+    }
+
+    footer {
+      text-align: center;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: #f8f9fa;
+    }
+    .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    .logo-img {
+      width: 200px; /* Adjust as needed */
+      height: auto;
+      margin-right: 10px;
+    }
+    .profile-menu {
+      position: relative;
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .profile-menu .fa-user {
+      font-size: 30px; /* Adjust size as needed */
+      color: #007BFF; /* Color of the icon */
+      cursor: pointer;
+    }
+
+    .profile-dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40px; /* Adjust this if needed */
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000; /* Ensures the dropdown is on top */
+      width: 150px; /* Adjust width as needed */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .profile-dropdown a {
+      display: block;
+      padding: 10px 15px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .profile-dropdown a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .profile-menu.open .profile-dropdown {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo3.jpg" alt="itjobmatrix Logo" class="logo-img">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="maps.html">Interactive Map</a></li>
+        <li><a href="Job_openings.html">Job Openings</a></li>
+        <li><a href="Career_pathway.html">Career Pathway</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" id="location-input" placeholder="Search...">
+      <button id="search-btn">Search</button>
+      <div class="profile-menu" id="profile-menu">
+        <i class="fas fa-user"></i> <!-- Font Awesome Profile Icon -->
+        <div class="profile-dropdown">
+          <a href="edit-profile.html">Edit Profile</a>
+          <a href="user-dashboard.html">User Dashboard</a>
+          <a href="home.html">Sign Out</a>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <h1>User Dashboard</h1>
+    <div class="dashboard-Sfeatures">
+      <div class="saved-jobs">
+        <h3>Saved Jobs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Company</th>
+              <th>Date Saved</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="applied-jobs">
+        <h3>Applied Jobs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Company</th>
+              <th>Date Applied</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="resume-management">
+        <h3>Resume Management</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Resume Version</th>
+              <th>Last Updated</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td><a href="#">View</a> | <a href="#">Edit</a></td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <!-- <div>
+      <p class="copyright">&copy; 2024 itjobmatrix.com. All rights reserved.</p>
+    </div> -->
+  </footer>
+</body>
+</html>

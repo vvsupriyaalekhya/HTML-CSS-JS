@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Openings Maps</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .visualization {
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .visualization.active {
+      display: block;
+    }
+
+    .controls {
+      text-align: center;
+      padding: 10px;
+      background-color: #f1f1f1;
+    }
+
+    .arrow-button {
+      font-size: 16px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #4897ac;
+      padding: 2px;
+    }
+
+    .arrow-button:hover {
+      color: #1e90ff;
+    }
+    
+    /* Increase image size */
+    .tableauPlaceholder img {
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    .tableauViz {
+      width: 100% !important;
+      height: 700px; /* Adjust height as needed */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <a href="index.html">
+          <img src="logo3.jpg" alt="itjobmatrix Logo" class="logo-img">
+        </a>
+      </div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="maps.html">Interactive Maps</a>
+        </li>
+        <li><a href="Job_openings.html">Job Openings</a></li>
+        <li><a href="Career_pathway.html">Career Pathway</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+        <input type="text" id="location-input" placeholder="Search...">
+        <button id="search-btn">Search</button>
+        <div class="profile-menu" id="profile-menu">
+            <i class="fas fa-user"></i> <!-- Font Awesome Profile Icon -->
+            <div class="profile-dropdown">
+              <a href="edit-profile.html">Edit Profile</a>
+              <a href="user-dashboard.html">User Dashboard</a>
+              <a href="home.html">Sign Out</a>
+            </div>
+      </div>
+  </header>
+  <div class="controls">
+    <button class="arrow-button" onclick="showPage('india')">&#9664; India</button>
+    <button class="arrow-button" onclick="showPage('usa')">USA &#9654;</button>
+  </div>
+  <div class="content">
+    <div id="india" class="visualization">
+        <div class='tableauPlaceholder' id='viz1721889030246' style='position: relative'>
+          <noscript><a href='#'><img alt='Job Openings for India' src='https://public.tableau.com/static/images/Bo/Book1_17218889023800/Sheet1/1_rss.png' style='border: none' /></a></noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+            <param name='embed_code_version' value='3' /> 
+            <param name='site_root' value='' />
+            <param name='name' value='Book1_17218889023800/Sheet1' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Bo/Book1_17218889023800/Sheet1/1.png' /> 
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-GB' />
+            <param name='filter' value='publish=yes' />
+          </object>
+        </div>
+      </div>
+    <div id="usa" class="visualization">
+      <div class='tableauPlaceholder' id='viz1721888763324' style='position: relative'>
+        <noscript><a href='#'><img alt='Job Openings for USA' src='https://public.tableau.com/static/images/Us/Usa_17218886732780/Sheet1/1_rss.png' style='border: none' /></a></noscript>
+        <object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+          <param name='embed_code_version' value='3' /> 
+          <param name='site_root' value='' />
+          <param name='name' value='Usa_17218886732780/Sheet1' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https://public.tableau.com/static/images/Us/Usa_17218886732780/Sheet1/1.png' /> 
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-GB' />
+        </object>
+      </div>
+    </div>
+    
+  </div>
+  <footer>
+    <p>&copy; 2024 itjobmatrix.com. All rights reserved.</p>
+  </footer>
+  <script type='text/javascript'>
+    function showPage(pageId) {
+      var visualizations = document.getElementsByClassName('visualization');
+      for (var i = 0; i < visualizations.length; i++) {
+        visualizations[i].classList.remove('active');
+      }
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    // Initialize the first visualization to be visible
+    showPage('usa');
+
+    // Load Tableau API dynamically
+    document.addEventListener('DOMContentLoaded', function () {
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      document.head.appendChild(scriptElement);
+    });
+  </script>
+</body>
+</html>

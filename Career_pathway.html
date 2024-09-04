@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>IT Career Pathway</title>
+        <link rel="icon" type="image/png" href="favicon-32x32.png">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            
+            nav {
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+            }
+    
+            nav ul {
+                list-style-type: none;
+                display: flex;
+                margin: 0;
+                padding: 0;
+            }
+    
+            nav li {
+                margin-right: 1.25em; /* 20px */
+            }
+    
+            nav a {
+                color: #495057;
+            }
+    
+            .resource-links a {
+                display: block;
+                margin-bottom: 10px;
+            }
+    
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+    
+            .container {
+                padding: 50px;
+                flex: 1;
+                padding-top: 5px; /* Adjust based on header height */
+            }
+    
+            h1, h2, h3 {
+                color: #333;
+            }
+    
+            .career-levels {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+    
+            .level {
+                background-color: #fff;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                width: 30%;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            .level h2 {
+                border-bottom: 2px solid #007bff;
+                padding-bottom: 10px;
+            }
+    
+            .level ul {
+                list-style-type: none;
+                padding: 0;
+            }
+    
+            .level ul li {
+                margin: 10px 0;
+            }
+    
+            .level ul li a {
+                text-decoration: none;
+                color: #007bff;
+            }
+    
+            .level ul li a:hover {
+                text-decoration: underline;
+            }
+    
+            .job-details {
+                background-color: #fff;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            .job-details .job {
+                margin-bottom: 20px;
+            }
+    
+            .connection {
+                position: relative;
+                padding-left: 20px;
+                margin-left: 20px;
+                border-left: 2px solid #007bff;
+                animation: grow 1s ease-in-out;
+            }
+    
+            .connection:before {
+                content: '';
+                position: absolute;
+                left: -20px;
+                top: 0;
+                bottom: 0;
+                width: 20px;
+                height: 2px;
+                background-color: #007bff;
+            }
+    
+            @keyframes grow {
+                0% {
+                    height: 0;
+                }
+    
+                100% {
+                    height: 100%;
+                }
+            }
+        </style>
+    </head>
+
+<body>
+    <!-- Header from the first HTML document -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+              <img src="logo3.jpg" alt="itjobmatrix Logo" class="logo-img">
+            </a>
+          </div>
+          <nav>
+            <ul>
+            <li><a href="about.html">About</a></li>
+              <li><a href="maps.html">Interactive Map</a></li>
+              <li><a href="Job_openings.html">Job Openings</a></li>
+              <li><a href="Career_pathway.html">Career Pathway</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="location-input" placeholder="Search...">
+            <button id="search-btn">Search</button>
+            <div class="profile-menu" id="profile-menu">
+                <i class="fas fa-user"></i> <!-- Font Awesome Profile Icon -->
+                <div class="profile-dropdown">
+                  <a href="edit-profile.html">Edit Profile</a>
+                  <a href="user-dashboard.html">User Dashboard</a>
+                  <a href="home.html">Sign Out</a>
+                </div>
+          </div>
+    </header>
+    <!-- Page Content -->
+    <div class="container">
+        <h1>IT Career Pathway</h1>
+        <p>Explore the key jobs within IT, common transition opportunities between them, and detailed information about the salaries, credentials, and skillsets associated with each role.</p>
+
+        <div class="career-levels">
+            <div class="level" id="entry-level">
+                <h2>Entry Level Roles</h2>
+                <ul>
+                    <li><a href="#help-desk-technician" class="job-link">Help Desk Technician</a></li>
+                    <li><a href="#it-support-specialist" class="job-link">IT Support Specialist</a></li>
+                    <li><a href="#junior-software-developer" class="job-link">Junior Software Developer</a></li>
+                    <li><a href="#data-analyst" class="job-link">Data Analyst</a></li>
+                    <li><a href="#network-technician" class="job-link">Network Technician</a></li>
+                </ul>
+            </div>
+
+            <div class="level" id="mid-level">
+                <h2>Mid Level Roles</h2>
+                <ul>
+                    <li><a href="#network-administrator" class="job-link">Network Administrator</a></li>
+                    <li><a href="#systems-analyst" class="job-link">Systems Analyst</a></li>
+                    <li><a href="#software-developer" class="job-link">Software Developer</a></li>
+                    <li><a href="#database-administrator" class="job-link">Database Administrator</a></li>
+                    <li><a href="#project-manager" class="job-link">Project Manager</a></li>
+                </ul>
+            </div>
+
+            <div class="level" id="advanced-level">
+                <h2>Advanced Level Roles</h2>
+                <ul>
+                    <li><a href="#it-manager" class="job-link">IT Manager</a></li>
+                    <li><a href="#solutions-architect" class="job-link">Solutions Architect</a></li>
+                    <li><a href="#senior-software-engineer" class="job-link">Senior Software Engineer</a></li>
+                    <li><a href="#data-scientist" class="job-link">Data Scientist</a></li>
+                    <li><a href="#cto" class="job-link">Chief Technology Officer (CTO)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job-details">
+            <div id="help-desk-technician" class="job">
+                <h3>Help Desk Technician</h3>
+                <p>Help Desk Technicians provide technical support and troubleshooting services to end-users who need assistance with their computer hardware or software. They are the first point of contact for IT issues.</p>
+                <div class="connection">Potential Career Path: IT Support Specialist, Network Technician</div>
+                <p><strong>Skills Required:</strong> Customer service, troubleshooting, basic networking, software installation, and hardware repair.</p>
+                <p><strong>Certifications:</strong> CompTIA A+, HDI Customer Service Representative</p>
+            </div>
+            <div id="it-support-specialist" class="job">
+                <h3>IT Support Specialist</h3>
+                <p>IT Support Specialists assist computer users with the operation and repair of computer systems and software. They provide support either within a company or directly to customers.</p>
+                <div class="connection">Potential Career Path: Network Administrator, Systems Analyst</div>
+                <p><strong>Skills Required:</strong> Technical support, problem-solving, network configuration, and system maintenance.</p>
+                <p><strong>Certifications:</strong> CompTIA Network+, Microsoft Certified: Modern Desktop Administrator Associate</p>
+            </div>
+            <div id="junior-software-developer" class="job">
+                <h3>Junior Software Developer</h3>
+                <p>Junior Software Developers assist with the design, development, and maintenance of software applications. They typically work under the supervision of senior developers or team leads.</p>
+                <div class="connection">Potential Career Path: Software Developer, Data Analyst</div>
+                <p><strong>Skills Required:</strong> Programming languages (e.g., Java, Python, C#), software development lifecycle, version control.</p>
+                <p><strong>Certifications:</strong> Oracle Certified Associate, Java SE Programmer, Microsoft Certified: Azure Developer Associate</p>
+            </div>
+            <div id="data-analyst" class="job">
+    <h3>Data Analyst</h3>
+    <p>Data Analysts collect, process, and perform statistical analyses on large datasets. They discover how data can be used to answer questions and solve problems.</p>
+    <div class="connection">Potential Career Path: Data Scientist, Database Administrator</div>
+    <p><strong>Skills Required:</strong> Data visualization, statistical analysis, SQL, Excel, data cleaning.</p>
+    <p><strong>Certifications:</strong> Microsoft Certified: Data Analyst Associate, Certified Analytics Professional (CAP)</p>
+</div>
+
+<div id="network-technician" class="job">
+    <h3>Network Technician</h3>
+    <p>Network Technicians are responsible for the installation, maintenance, and troubleshooting of computer network systems.</p>
+    <div class="connection">Potential Career Path: Network Administrator, IT Support Specialist</div>
+    <p><strong>Skills Required:</strong> Networking protocols, hardware setup, network security, troubleshooting.</p>
+    <p><strong>Certifications:</strong> CompTIA Network+, Cisco Certified Network Associate (CCNA)</p>
+</div>
+
+<div id="network-administrator" class="job">
+    <h3>Network Administrator</h3>
+    <p>Network Administrators manage and maintain network infrastructure, ensuring optimal performance and security.</p>
+    <div class="connection">Potential Career Path: Systems Analyst, IT Manager</div>
+    <p><strong>Skills Required:</strong> Network configuration, security, server administration, troubleshooting.</p>
+    <p><strong>Certifications:</strong> Cisco Certified Network Professional (CCNP), CompTIA Security+</p>
+</div>
+
+<div id="systems-analyst" class="job">
+    <h3>Systems Analyst</h3>
+    <p>Systems Analysts evaluate and improve computer systems to meet the needs of the business or organization.</p>
+    <div class="connection">Potential Career Path: Solutions Architect, IT Manager</div>
+    <p><strong>Skills Required:</strong> Systems design, data analysis, problem-solving, project management.</p>
+    <p><strong>Certifications:</strong> Certified Systems Analyst (CSA), Microsoft Certified: Azure Solutions Architect Expert</p>
+</div>
+
+<div id="software-developer" class="job">
+    <h3>Software Developer</h3>
+    <p>Software Developers design, code, and maintain software applications, working closely with other developers and stakeholders.</p>
+    <div class="connection">Potential Career Path: Senior Software Engineer, Solutions Architect</div>
+    <p><strong>Skills Required:</strong> Programming, software design, problem-solving, version control.</p>
+    <p><strong>Certifications:</strong> Oracle Certified Professional, Java SE Developer, Microsoft Certified: Azure Developer Associate</p>
+</div>
+
+<div id="database-administrator" class="job">
+    <h3>Database Administrator</h3>
+    <p>Database Administrators are responsible for the performance, integrity, and security of databases.</p>
+    <div class="connection">Potential Career Path: Data Scientist, IT Manager</div>
+    <p><strong>Skills Required:</strong> Database management, SQL, performance tuning, backup and recovery.</p>
+    <p><strong>Certifications:</strong> Oracle Certified Professional, Microsoft Certified: Azure Database Administrator Associate</p>
+</div>
+
+<div id="project-manager" class="job">
+    <h3>Project Manager</h3>
+    <p>Project Managers oversee IT projects, ensuring they are completed on time, within budget, and to specifications.</p>
+    <div class="connection">Potential Career Path: IT Manager, Solutions Architect</div>
+    <p><strong>Skills Required:</strong> Project management, leadership, communication, budgeting.</p>
+    <p><strong>Certifications:</strong> Project Management Professional (PMP), Certified ScrumMaster (CSM)</p>
+</div>
+
+<div id="it-manager" class="job">
+    <h3>IT Manager</h3>
+    <p>IT Managers oversee the IT department, ensuring the efficient operation of the company's technology infrastructure.</p>
+    <div class="connection">Potential Career Path: Solutions Architect, Chief Technology Officer (CTO)</div>
+    <p><strong>Skills Required:</strong> Leadership, strategic planning, project management, budgeting.</p>
+    <p><strong>Certifications:</strong> Certified Information Systems Security Professional (CISSP), ITIL Foundation</p>
+</div>
+
+<div id="solutions-architect" class="job">
+    <h3>Solutions Architect</h3>
+    <p>Solutions Architects design and implement complex IT systems, ensuring they meet business requirements.</p>
+    <div class="connection">Potential Career Path: Chief Technology Officer (CTO)</div>
+    <p><strong>Skills Required:</strong> Systems design, cloud computing, software architecture, problem-solving.</p>
+    <p><strong>Certifications:</strong> AWS Certified Solutions Architect, Microsoft Certified: Azure Solutions Architect Expert</p>
+</div>
+
+<div id="senior-software-engineer" class="job">
+    <h3>Senior Software Engineer</h3>
+    <p>Senior Software Engineers lead software development projects, mentor junior developers, and design software solutions.</p>
+    <div class="connection">Potential Career Path: Solutions Architect, Chief Technology Officer (CTO)</div>
+    <p><strong>Skills Required:</strong> Advanced programming, software design, leadership, problem-solving.</p>
+    <p><strong>Certifications:</strong> Oracle Certified Professional, Java SE Developer, Microsoft Certified: Azure Developer Associate</p>
+</div>
+
+<div id="data-scientist" class="job">
+    <h3>Data Scientist</h3>
+    <p>Data Scientists analyze and interpret complex data to help companies make informed decisions and solve problems.</p>
+    <div class="connection">Potential Career Path: Chief Technology Officer (CTO)</div>
+    <p><strong>Skills Required:</strong> Machine learning, statistical analysis, data visualization, programming.</p>
+    <p><strong>Certifications:</strong> Certified Data Scientist (CDS), Microsoft Certified: Azure Data Scientist Associate</p>
+</div>
+
+<div id="cto" class="job">
+    <h3>Chief Technology Officer (CTO)</h3>
+    <p>The Chief Technology Officer (CTO) is responsible for the overall technology strategy and implementation within a company.</p>
+    <div class="connection">Potential Career Path: Executive leadership roles</div>
+    <p><strong>Skills Required:</strong> Leadership, strategic planning, technology management, innovation.</p>
+    <p><strong>Certifications:</strong> Certified Information Systems Security Professional (CISSP), ITIL Foundation</p>
+</div>
+</div>
+</div>
+<footer>
+    <p>&copy; 2024 itjobmatrix. All rights reserved.</p>
+    </footer>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const jobLinks = document.querySelectorAll(".job-link");
+    const jobDetails = document.querySelectorAll(".job");
+    
+    jobLinks.forEach(link => {
+    link.addEventListener("click", function (event) {
+    event.preventDefault();
+    
+    const targetId = link.getAttribute("href").substring(1);
+    
+    jobDetails.forEach(job => {
+    if (job.id === targetId) {
+    job.style.display = "block";
+    job.scrollIntoView({ behavior: "smooth" });
+    } else {
+    job.style.display = "none";
+    }
+    });
+    });
+    });
+    });
+    </script>
+    </body>
+    </html>

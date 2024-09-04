@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo3.jpg" alt="ITJobMatrix Logo" style="height: 50px;"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="about.html" class="protected-link">About</a></li>
+        <li><a href="maps.html" class="protected-link">Interactive Map</a></li>
+        <li><a href="Job_openings.html" class="protected-link">Job Openings</a></li>
+        <li><a href="Career_pathway.html" class="protected-link">Career Pathway</a></li>
+        <li><a href="contact.html" class="protected-link">Contact Us</a></li>
+        <li><a href="profile.html" class="protected-link">Profile</a></li>
+      </ul>
+    </nav>
+    <div id="auth-section" class="auth-section">
+      <!-- Login/Signup or Search/Profile will be injected here by JavaScript -->
+    </div>
+  </header>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Search - itjobmatrix.com</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        padding-left: 30px; /* Adjust as needed */
+        padding-top: 80px; /* Adjust based on header height */
+    }
+
+    header {
+        background-color: #f8f9fa;
+        padding: 1em 2em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    .logo {
+        margin-right: 2em; /* Adjust this value to increase the space */
+    }
+
+    .logo a {
+        font-size: 1.5em; /* 24px assuming the default font size is 16px */
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    nav {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        margin-right: 1.25em; /* 20px */
+    }
+
+    nav a {
+        color: #495057;
+    }
+
+    .content-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2em;
+        background-color: rgba(231, 244, 245, 0.8); /* Background color for the box */
+        border: 1px solid #dee2e6; /* Border color */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-top: 1.5em;
+    }
+
+    p {
+        line-height: 1.6;
+        text-align: justify; /* Justify text alignment */
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul li {
+        margin-bottom: 1em; /* Space between list items */
+        line-height: 1.8; /* Adjust line height for spacing within list items */
+    }
+
+    .contact-info {
+        margin-top: 2em;
+    }
+
+    .contact-info a {
+        color: #007bff;
+    }
+
+    input[type="text"], input[type="file"], button {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #results {
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        table-layout: fixed;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+        word-wrap: break-word;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+    .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    .logo-img {
+      width: 200px; /* Adjust as needed */
+      height: auto;
+      margin-right: 10px;
+    }
+    footer {
+      text-align: center;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: #f8f9fa;
+    }
+    .profile-menu {
+      position: relative;
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .profile-menu .fa-user {
+      font-size: 30px; /* Adjust size as needed */
+      color: #007BFF; /* Color of the icon */
+      cursor: pointer;
+    }
+
+    .profile-dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40px; /* Adjust this if needed */
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000; /* Ensures the dropdown is on top */
+      width: 150px; /* Adjust width as needed */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .profile-dropdown a {
+      display: block;
+      padding: 10px 15px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .profile-dropdown a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .profile-menu.open .profile-dropdown {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+</style>
+</head>
+<body>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo3.jpg" alt="itjobmatrix Logo" class="logo-img">
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="maps.html">Interactive Map</a></li>
+          <li><a href="Job_openings.html">Job Openings</a></li>
+          
+          <li><a href="Career_pathway.html">Career Pathway</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input type="text" id="location-input" placeholder="Search...">
+        <button id="search-btn">Search</button>
+        <div class="profile-menu" id="profile-menu">
+          <i class="fas fa-user"></i> <!-- Font Awesome Profile Icon -->
+          <div class="profile-dropdown">
+            <a href="edit-profile.html">Edit Profile</a>
+            <a href="user-dashboard.html">User Dashboard</a>
+            <a href="home.html">Sign Out</a>
+          </div>
+      </div>
+</header>
+
+  <main>
+    <center><section id="job-search"></section></center>
+        
+      <!-- Inserted Tableau Visualization -->
+      <div class='tableauPlaceholder' id='viz1721817625565' style='position: relative'><noscript><a href='#'><img alt='Job Openings in India ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;InteractiveMap_India&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='InteractiveMap_India&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;InteractiveMap_India&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1721817625565');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      <div class='tableauPlaceholder' id='viz1721817367691' style='position: relative'><noscript><a href='#'><img alt='Job Openings in USA ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;us&#47;usa_map1&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='usa_map1&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;us&#47;usa_map1&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1721817367691');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      
+      <script type='text/javascript'>
+        var divElement = document.getElementById('viz1721721567222');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width='100%';
+        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+      
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p>📧 Email: <a href="mailto:itjobmatrixinfo@gmail.com">itjobmatrixinfo@gmail.com</a></p>
+      </div>
+      <div class="social-links">
+        <p><a href="#">🔗 LinkedIn</a></p>
+      </div>
+    </div>
+    <p class="copyright" style="text-align: center;">&copy; 2024 itjobmatrix.com. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

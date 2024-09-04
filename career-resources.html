@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo3.jpg" alt="ITJobMatrix Logo" style="height: 50px;"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="about.html" class="protected-link">About</a></li>
+        <li><a href="maps.html" class="protected-link">Interactive Map</a></li>
+        <li><a href="Job_openings.html" class="protected-link">Job Openings</a></li>
+        <li><a href="Career_pathway.html" class="protected-link">Career Pathway</a></li>
+        <li><a href="contact.html" class="protected-link">Contact Us</a></li>
+        <li><a href="profile.html" class="protected-link">Profile</a></li>
+      </ul>
+    </nav>
+    <div id="auth-section" class="auth-section">
+      <!-- Login/Signup or Search/Profile will be injected here by JavaScript -->
+    </div>
+  </header>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Resources</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      padding-left: 30px; /* Adjust as needed */
+      padding-top: 80px; /* Adjust based on header height */
+    }
+
+    header {
+      background-color: #f8f9fa;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    .logo {
+      margin-right: 2em; /* Adjust this value to increase the space */
+    }
+
+    .logo a {
+      font-size: 1.5em; /* 24px assuming the default font size is 16px */
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin-right: 1.25em; /* 20px */
+    }
+
+    nav a {
+      color: #495057;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input {
+      padding: 0.5em 0.75em; /* 8px 12px */
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    .search-bar button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 0.5em 1em; /* 8px 16px */
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 0.5em; /* 8px */
+    }
+
+    .resource-links a {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background-color: #007BFF;
+      color: white;
+      padding: 14px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #0056b3;
+    }
+
+    .dropdown a {
+      padding: 14px 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">itjobmatrix.com</a>
+    </div>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <a href="#">Interactive Maps</a>
+          <div class="dropdown-content">
+            <a href="india.html">India</a>
+            <a href="usa.html">USA</a>
+          </div>
+        </li>
+        <li><a href="Job_openings.html">Job Openings</a></li>
+        <li><a href="career-resources.html">Career Resources</a></li>
+        <li><a href="user-dashboard.html">User Dashboard</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      </nav>
+  </header>
+
+  <h1>Career Resources</h1>
+  <div class="resource-links">
+    <a href="https://www.example.com/resume-tips" target="_blank">Resume Writing Tips</a>
+    <a href="https://www.example.com/interview-prep" target="_blank">Interview Preparation</a>
+    <a href="https://www.example.com/career-advice" target="_blank">Career Advice</a>
+  </div>
+  <footer>
+    <p class="copyright" style="text-align: center;">&copy; 2024 itjobmatrix.com. All rights reserved.</p>
+  </footer>
+</body>
+</html>

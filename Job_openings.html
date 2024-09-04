@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Openings - Career Resources</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Your existing CSS */
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2em;
+            background-color: rgba(231, 244, 245, 0.8); /* Background color for the box */
+            border: 1px solid #dee2e6; /* Border color */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+            text-align: center; /* Center align text and buttons */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo3.jpg" alt="itjobmatrix Logo" class="logo-img">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="maps.html">Interactive Map</a></li>
+                <li><a href="Job_openings.html">Job Openings</a></li>
+                <li><a href="Career_pathway.html">Career Pathway</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar" style="text-align: center;">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="searchJobs()">Search</button>
+            <div class="profile-menu" id="profile-menu" style="display: inline-block; vertical-align: middle;">
+                <i class="fas fa-user"></i> <!-- Font Awesome Profile Icon -->
+                <div class="profile-dropdown">
+                    <a href="edit-profile.html">Edit Profile</a>
+                    <a href="user-dashboard.html">User Dashboard</a>
+                    <a href="home.html">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-container">
+        <h1>Job Openings</h1>
+        <input type="text" id="searchInput" placeholder="Enter company name, location, job title">
+        <button onclick="searchJobs()">Search</button>
+        <div id="results"></div>
+    </div>
+    <footer>
+      <p>&copy; 2024 itjobmatrix.com. All rights reserved.</p>
+    </footer>
+    <script>
+        function searchJobs() {
+            const query = document.getElementById('searchInput').value;
+            fetch(/search/?q=${encodeURIComponent(query)})
+                .then(response => response.json())
+                .then(data => {
+                    const resultsDiv = document.getElementById('results');
+                    const results = data.results;
+                    if (results.length === 0) {
+                        resultsDiv.innerHTML = 'No results found.';
+                        return;
+                    }
+
+                    let resultHtml = '<table><thead><tr>';
+                    if (results.length > 0) {
+                        const headers = Object.keys(results[0]);
+                        headers.forEach(header => {
+                            resultHtml += <th>${header}</th>;
+                        });
+                        resultHtml += '</tr></thead><tbody>';
+
+                        results.forEach(job => {
+                            resultHtml += '<tr>';
+                            headers.forEach(header => {
+                                const cell = job[header];
+                                if (header === 'job_url') {
+                                    resultHtml += <td><a href="${cell}" target="_blank">${cell}</a></td>;
+                                } else {
+                                    resultHtml += <td>${cell}</td>;
+                                }
+                            });
+                            resultHtml += '</tr>';
+                        });
+
+                        resultHtml += '</tbody></table>';
+                    }
+
+                    resultsDiv.innerHTML = resultHtml;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+</html>
